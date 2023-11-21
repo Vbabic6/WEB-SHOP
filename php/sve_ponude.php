@@ -25,13 +25,13 @@
 
     <?php
     
-    $server = "localhost";
-    $database = "pzi";
-    $username = "root";
-    $password = "";
+    $server = "ucka.veleri.hr:3306";
+    $database = "vbabic";
+    $username = "vbabic";
+    $password = "11";
 
     $conn = mysqli_connect($server,$username,$password,$database);
-    $query = "SELECT * FROM mobiteli";
+    $query = "SELECT * FROM Mobiteli";
     $res = mysqli_query($conn,$query );
 
 
@@ -53,18 +53,17 @@
 
              while($row = mysqli_fetch_array($res)){
                 echo"<tr>";
-                echo "<td>$row['id'] </td>";
-                echo "<td>$row['naziv'] </td>";
-                echo "<td>$row['proizvodjac'] </td>";
-                echo "<td>$row['opis'] </td>";
-                echo "<td><image src =''".$row['slika']."'
-                width='100px' alt='"$row['naziv']."' ></td>";
-                echo "<td>$row['cijena'] </td>";
+                echo "<td>".$row['Id']. "</td>";
+                echo "<td>".$row['Naziv']." </td>";
+                echo "<td>".$row['Proizvodac']. "</td>";
+                echo "<td>".$row['Opis']." </td>";
+                echo "<td><img src='".$row["Slika"]."' width='100px' alt='" ."'></td>";
+                echo "<td>".$row['Cijena']."</td>";
                 echo "</tr>";
 
             }
 
-            mysql close($conn);
+            mysqli_close($conn);
 
             ?>
 
